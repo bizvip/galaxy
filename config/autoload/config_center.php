@@ -5,7 +5,7 @@ declare(strict_types=1);
 use Hyperf\ConfigCenter\Mode;
 
 return [
-    'enable'  => (bool) env('CONFIG_CENTER_ENABLE', true),
+    'enable'  => (bool)env('CONFIG_CENTER_ENABLE', true),
     'driver'  => env('CONFIG_CENTER_DRIVER', 'etcd'),
     'mode'    => env('CONFIG_CENTER_MODE', Mode::PROCESS),
     'drivers' => [
