@@ -8,7 +8,7 @@ use Qbhy\SimpleJwt\EncryptAdapters as Encrypter;
 return [
     'default'   => [
         'guard'    => 'jwt',
-        'provider' => 'users',
+        'provider' => 'admin',
     ],
     'guards'    => [
         'sso'     => [
@@ -160,13 +160,13 @@ return [
         ],
         'session' => [
             'driver'   => Qbhy\HyperfAuth\Guard\SessionGuard::class,
-            'provider' => 'users',
+            'provider' => 'admin',
         ],
     ],
     'providers' => [
         'users' => [
             'driver' => \Qbhy\HyperfAuth\Provider\EloquentProvider::class,
-            'model'  => App\Model\User::class, // 需要实现 Qbhy\HyperfAuth\Authenticatable 接口
+            'model'  => \App\Model\Admin::class, // 需要实现 Qbhy\HyperfAuth\Authenticatable 接口
         ],
     ],
 ];

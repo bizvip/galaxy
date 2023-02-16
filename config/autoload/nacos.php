@@ -9,6 +9,10 @@ return [
     'username' => 'nacos',
     'password' => 'fucking123.',
     'guzzle'   => [
-        'config' => null,
+        'config' => [
+            'headers' => [
+                'charset' => 'UTF-8',
+            ],
+        ],
     ],
 ];
