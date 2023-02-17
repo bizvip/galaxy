@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 return [
     // 'uri'=>'http://hosts.run',
-    'host'     => '127.0.0.1',
-    'port'     => 8890,
+    'host'     => env('CONFIG_CENTER_HOST'),
+    'port'     => env('CONFIG_CENTER_PORT'),
     'username' => 'nacos',
-    'password' => 'fucking123.',
+    'password' => '19EuBip2zGZXA004AkqP',
     'guzzle'   => [
         'config' => [
             'headers' => [
