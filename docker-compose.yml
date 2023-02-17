@@ -44,8 +44,8 @@ services:
 
   postgresql:
     image: postgres:latest
-    volumes:
-      - ./docker/data/postgres_data:/var/lib/postgresql/data
+#    volumes:
+#      - ./docker/data/postgres_data:/var/lib/postgresql/data
     restart: always
     environment:
       POSTGRES_USER: 'postgres'
@@ -108,8 +108,8 @@ services:
         hard: 65536
     cap_add:
       - IPC_LOCK
-    volumes:
-      - ./docker/data/es-data:/usr/share/elasticsearch/data
+#    volumes:
+#      - ./docker/data/es-data:/usr/share/elasticsearch/data
     ports:
       - "19200:9200"
       - "19300:9300"
