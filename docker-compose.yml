@@ -58,7 +58,7 @@ services:
     image: dpage/pgadmin4:latest
     restart: always
     environment:
-      PGADMIN_DEFAULT_EMAIL: 'a@a.com'
+      PGADMIN_DEFAULT_EMAIL: 'me@me.me'
       PGADMIN_DEFAULT_PASSWORD: 'fuck123sql'
     ports:
       - "8543:80"
@@ -92,7 +92,7 @@ services:
   #            app_net:
   #                ipv4_address: 172.88.88.38
   elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:8.5.0
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.6.0
     #    container_name: es
     environment:
       - xpack.security.enabled=false
@@ -107,17 +107,17 @@ services:
     cap_add:
       - IPC_LOCK
     volumes:
-      - ./docker/es-data:/usr/share/elasticsearch/data
+      - ./docker/data/es-data:/usr/share/elasticsearch/data
     ports:
-      - "9201:9200"
-      - "9301:9300"
+      - "9200:9200"
+      - "9300:9300"
     networks:
       app_net:
         ipv4_address: 172.88.88.58
 
   kibana:
     #    container_name: kibana
-    image: docker.elastic.co/kibana/kibana:8.5.0
+    image: docker.elastic.co/kibana/kibana:8.6.0
     environment:
       - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
     ports:
@@ -144,7 +144,7 @@ services:
     image: nacos/nacos-server:latest
     container_name: nacos
     ports:
-      - "8848:8848"
+      - "8890:8890"
     environment:
       MODE: standalone
     networks:
