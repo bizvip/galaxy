@@ -1274,16 +1274,16 @@
         },
         {
             "name": "hyperf/config-center",
-            "version": "v3.0.0",
+            "version": "v3.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hyperf/config-center.git",
-                "reference": "85c8a525552eda75a810f0b4262ca883c78c79f5"
+                "reference": "f6870c63b5bb6059f265bc4a5296810d9e15eadc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hyperf/config-center/zipball/85c8a525552eda75a810f0b4262ca883c78c79f5",
-                "reference": "85c8a525552eda75a810f0b4262ca883c78c79f5",
+                "url": "https://api.github.com/repos/hyperf/config-center/zipball/f6870c63b5bb6059f265bc4a5296810d9e15eadc",
+                "reference": "f6870c63b5bb6059f265bc4a5296810d9e15eadc",
                 "shasum": ""
             },
             "require": {
@@ -1323,7 +1323,7 @@
                 "pull-request": "https://github.com/hyperf/hyperf/pulls",
                 "source": "https://github.com/hyperf/hyperf"
             },
-            "time": "2022-11-01T02:50:54+00:00"
+            "time": "2023-02-16T04:55:02+00:00"
         },
         {
             "name": "hyperf/config-etcd",
@@ -1378,16 +1378,16 @@
         },
         {
             "name": "hyperf/config-nacos",
-            "version": "v3.0.0",
+            "version": "v3.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hyperf/config-nacos.git",
-                "reference": "588b4c4d64db9330617a2ada41924ebb0b4111e2"
+                "reference": "a9b4d08790d6819779146f3f960d4ab85ee3fcfa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hyperf/config-nacos/zipball/588b4c4d64db9330617a2ada41924ebb0b4111e2",
-                "reference": "588b4c4d64db9330617a2ada41924ebb0b4111e2",
+                "url": "https://api.github.com/repos/hyperf/config-nacos/zipball/a9b4d08790d6819779146f3f960d4ab85ee3fcfa",
+                "reference": "a9b4d08790d6819779146f3f960d4ab85ee3fcfa",
                 "shasum": ""
             },
             "require": {
@@ -1438,7 +1438,7 @@
                 "pull-request": "https://github.com/hyperf/hyperf/pulls",
                 "source": "https://github.com/hyperf/hyperf"
             },
-            "time": "2022-11-01T02:50:54+00:00"
+            "time": "2023-02-17T22:07:42+00:00"
         },
         {
             "name": "hyperf/constants",
@@ -1642,16 +1642,16 @@
         },
         {
             "name": "hyperf/database",
-            "version": "v3.0.6",
+            "version": "v3.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hyperf/database.git",
-                "reference": "17dde939ac9e8996896c5b573025016f8aeebabe"
+                "reference": "7110ffcdd6f43a2dcb16d5c2c4756187b8891cf6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hyperf/database/zipball/17dde939ac9e8996896c5b573025016f8aeebabe",
-                "reference": "17dde939ac9e8996896c5b573025016f8aeebabe",
+                "url": "https://api.github.com/repos/hyperf/database/zipball/7110ffcdd6f43a2dcb16d5c2c4756187b8891cf6",
+                "reference": "7110ffcdd6f43a2dcb16d5c2c4756187b8891cf6",
                 "shasum": ""
             },
             "require": {
@@ -1695,20 +1695,20 @@
                 "pull-request": "https://github.com/hyperf/hyperf/pulls",
                 "source": "https://github.com/hyperf/hyperf"
             },
-            "time": "2023-02-08T06:42:10+00:00"
+            "time": "2023-02-17T22:14:38+00:00"
         },
         {
             "name": "hyperf/database-pgsql",
-            "version": "v3.0.6",
+            "version": "v3.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hyperf/database-pgsql.git",
-                "reference": "8d5feb12e55943e3f35def4793d9ef14a56768e4"
+                "reference": "ce2247e7502447ea7a51b88483b7962e1c5d5949"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hyperf/database-pgsql/zipball/8d5feb12e55943e3f35def4793d9ef14a56768e4",
-                "reference": "8d5feb12e55943e3f35def4793d9ef14a56768e4",
+                "url": "https://api.github.com/repos/hyperf/database-pgsql/zipball/ce2247e7502447ea7a51b88483b7962e1c5d5949",
+                "reference": "ce2247e7502447ea7a51b88483b7962e1c5d5949",
                 "shasum": ""
             },
             "require": {
@@ -1749,7 +1749,7 @@
                 "pull-request": "https://github.com/hyperf/hyperf/pulls",
                 "source": "https://github.com/hyperf/hyperf"
             },
-            "time": "2023-02-11T05:16:17+00:00"
+            "time": "2023-02-16T05:58:21+00:00"
         },
         {
             "name": "hyperf/db-connection",
@@ -2713,16 +2713,16 @@
         },
         {
             "name": "hyperf/nacos",
-            "version": "v3.0.3",
+            "version": "v3.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hyperf/nacos.git",
-                "reference": "9140a70613d2e671dbda178bdece8622430852d5"
+                "reference": "978e39efabc864edb5b801ec6df3c581615ac212"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hyperf/nacos/zipball/9140a70613d2e671dbda178bdece8622430852d5",
-                "reference": "9140a70613d2e671dbda178bdece8622430852d5",
+                "url": "https://api.github.com/repos/hyperf/nacos/zipball/978e39efabc864edb5b801ec6df3c581615ac212",
+                "reference": "978e39efabc864edb5b801ec6df3c581615ac212",
                 "shasum": ""
             },
             "require": {
@@ -2757,9 +2757,9 @@
             ],
             "support": {
                 "issues": "https://github.com/hyperf/nacos/issues",
-                "source": "https://github.com/hyperf/nacos/tree/v3.0.3"
+                "source": "https://github.com/hyperf/nacos/tree/v3.0.7"
             },
-            "time": "2023-01-12T14:31:04+00:00"
+            "time": "2023-02-17T22:07:42+00:00"
         },
         {
             "name": "hyperf/pool",
@@ -2936,16 +2936,16 @@
         },
         {
             "name": "hyperf/server",
-            "version": "v3.0.6",
+            "version": "v3.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hyperf/server.git",
-                "reference": "6a02dea3b34b02d651744066b9fdab38a4c9dd99"
+                "reference": "4d4613d0891a1101eb33f3bf3b1482afaf3a6817"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hyperf/server/zipball/6a02dea3b34b02d651744066b9fdab38a4c9dd99",
-                "reference": "6a02dea3b34b02d651744066b9fdab38a4c9dd99",
+                "url": "https://api.github.com/repos/hyperf/server/zipball/4d4613d0891a1101eb33f3bf3b1482afaf3a6817",
+                "reference": "4d4613d0891a1101eb33f3bf3b1482afaf3a6817",
                 "shasum": ""
             },
             "require": {
@@ -2993,20 +2993,20 @@
                 "pull-request": "https://github.com/hyperf/hyperf/pulls",
                 "source": "https://github.com/hyperf/hyperf"
             },
-            "time": "2023-02-08T14:23:25+00:00"
+            "time": "2023-02-13T13:37:08+00:00"
         },
         {
             "name": "hyperf/utils",
-            "version": "v3.0.5",
+            "version": "v3.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hyperf/utils.git",
-                "reference": "91ee8d101a943172ee46df890421a8fc5d627592"
+                "reference": "1fbe3dafd3be55b2ae5e94f123add3258c85ee4c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hyperf/utils/zipball/91ee8d101a943172ee46df890421a8fc5d627592",
-                "reference": "91ee8d101a943172ee46df890421a8fc5d627592",
+                "url": "https://api.github.com/repos/hyperf/utils/zipball/1fbe3dafd3be55b2ae5e94f123add3258c85ee4c",
+                "reference": "1fbe3dafd3be55b2ae5e94f123add3258c85ee4c",
                 "shasum": ""
             },
             "require": {
@@ -3061,7 +3061,7 @@
                 "pull-request": "https://github.com/hyperf/hyperf/pulls",
                 "source": "https://github.com/hyperf/hyperf"
             },
-            "time": "2023-02-04T05:33:19+00:00"
+            "time": "2023-02-14T05:32:29+00:00"
         },
         {
             "name": "laminas/laminas-mime",
@@ -6454,16 +6454,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "1.9.17",
+            "version": "1.9.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "204e459e7822f2c586463029f5ecec31bb45a1f2"
+                "reference": "f2d5cf71be91172a57c649770b73c20ebcffb0bf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/204e459e7822f2c586463029f5ecec31bb45a1f2",
-                "reference": "204e459e7822f2c586463029f5ecec31bb45a1f2",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/f2d5cf71be91172a57c649770b73c20ebcffb0bf",
+                "reference": "f2d5cf71be91172a57c649770b73c20ebcffb0bf",
                 "shasum": ""
             },
             "require": {
@@ -6493,7 +6493,7 @@
             ],
             "support": {
                 "issues": "https://github.com/phpstan/phpstan/issues",
-                "source": "https://github.com/phpstan/phpstan/tree/1.9.17"
+                "source": "https://github.com/phpstan/phpstan/tree/1.9.18"
             },
             "funding": [
                 {
@@ -6509,7 +6509,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-02-08T12:25:00+00:00"
+            "time": "2023-02-17T15:01:27+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
