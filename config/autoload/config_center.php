@@ -31,12 +31,7 @@ return [
             'listener_config' => [
                 // dataId, group, tenant, type, content
                 // 映射后的配置 KEY => Nacos 中实际的配置
-                // 'nacos_config' => [
-                //     'tenant'  => 'public',// corresponding with service.namespaceId
-                //     'data_id' => 'test',
-                //     'group'   => 'GALAXY_TEST',
-                // ],
-                'galaxy'       => [
+                'galaxy' => [
                     'tenant'  => 'galaxy',
                     'data_id' => 'test',
                     'group'   => 'GALAXY_TEST',

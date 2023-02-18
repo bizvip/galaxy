@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 use Hyperf\Server\Event;
-use Hyperf\Server\Server;
+use Hyperf\Server\ServerInterface;
 use Swoole\Constant;
 
 return [
@@ -11,7 +11,7 @@ return [
     'servers'   => [
         [
             'name'      => 'http',
-            'type'      => Server::SERVER_HTTP,
+            'type'      => ServerInterface::SERVER_HTTP,
             'host'      => '0.0.0.0',
             'port'      => 8888,
             'sock_type' => SWOOLE_SOCK_TCP,

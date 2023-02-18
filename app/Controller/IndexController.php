@@ -15,7 +15,6 @@ final class IndexController extends AbstractController
     #[GetMapping('/')]
     public function index(): array
     {
-        $user   = $this->request->input('user', 'Hyperf');
         $method = $this->request->getMethod();
 
         $conf = ApplicationContext::getContainer()->get(ConfigInterface::class);
@@ -23,16 +22,15 @@ final class IndexController extends AbstractController
         $value = ($conf->get('galaxy'));
 
         return [
-            '1111'    => $value,
-            'auth'    => $this->authManager->guard(),
-            'id'      => $this->authManager->getGuards(),
-            'method'  => $method,
-            'message' => "Hello {$user}.",
+            'indexController' => $value,
+            'auth'            => $this->authManager->guard(),
+            'id'              => $this->authManager->getGuards(),
+            'method'          => $method,
         ];
     }
 
     #[GetMapping('/test')]
-    public function test(): array
+    public function login(): array
     {
         return ['jdsaofijsdaoifoisadfjiosad' => 'jdfijasdiofodsajfoasdjioijo'];
     }
