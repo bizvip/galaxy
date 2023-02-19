@@ -34,8 +34,6 @@ services:
   redis:
     image: redis/redis-stack:latest
     restart: always
-    environment:
-      REDIS_PASSWORD: '19EuBip2zGZXA004AkqP'
     ports:
       - "16379:6379"
     networks:
@@ -70,19 +68,24 @@ services:
       app_net:
         ipv4_address: 172.88.88.19
 
-  #    mysql:
-  #        image: mysql/mysql-server:latest
-  #        #        volumes:
-  #        #            - ./docker/mysql-data:/var/lib/mysql
-  #        restart: always
-  #        environment:
-  #            MYSQL_ROOT_PASSWORD: 'fuck123sql'
-  #            MYSQL_ROOT_HOST: '0.0.0.0'
-  #        ports:
-  #            - "3306:3306"
-  #        networks:
-  #            app_net:
-  #                ipv4_address: 172.88.88.28
+  #  CREATE USER 'root'@'%' IDENTIFIED BY '19EuBip2zGZXA004AkqP';
+  #  GRANT ALL PRIVILEGES ON *.* TO 'root'@'%';
+  #  FLUSH PRIVILEGES;
+  mysql:
+    image: mysql/mysql-server:latest
+    volumes:
+      - ./docker/mysql-data:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: '19EuBip2zGZXA004AkqP'
+      MYSQL_ROOT_HOST: '0.0.0.0'
+      MYSQL_DATABASE: 'galaxy'
+      MYSQL_MAX_CONNECTIONS: 200
+    ports:
+      - "13306:3306"
+    networks:
+      app_net:
+        ipv4_address: 172.88.88.28
 
   #    zinc:
   #        image: public.ecr.aws/zinclabs/zinc:latest
@@ -96,29 +99,29 @@ services:
   #            app_net:
   #                ipv4_address: 172.88.88.38
 
-#  elasticsearch:
-#    image: docker.elastic.co/elasticsearch/elasticsearch:8.6.0
-#    container_name: es
-#    environment:
-#      - xpack.security.enabled=false
-#      - discovery.type=single-node
-#    ulimits:
-#      memlock:
-#        soft: -1
-#        hard: -1
-#      nofile:
-#        soft: 65536
-#        hard: 65536
-#    cap_add:
-#      - IPC_LOCK
-#    volumes:
-#      - ./docker/data/es-data:/usr/share/elasticsearch/data
-#    ports:
-#      - "19200:9200"
-#      - "19300:9300"
-#    networks:
-#      app_net:
-#        ipv4_address: 172.88.88.58
+  #  elasticsearch:
+  #    image: docker.elastic.co/elasticsearch/elasticsearch:8.6.0
+  #    container_name: es
+  #    environment:
+  #      - xpack.security.enabled=false
+  #      - discovery.type=single-node
+  #    ulimits:
+  #      memlock:
+  #        soft: -1
+  #        hard: -1
+  #      nofile:
+  #        soft: 65536
+  #        hard: 65536
+  #    cap_add:
+  #      - IPC_LOCK
+  #    volumes:
+  #      - ./docker/data/es-data:/usr/share/elasticsearch/data
+  #    ports:
+  #      - "19200:9200"
+  #      - "19300:9300"
+  #    networks:
+  #      app_net:
+  #        ipv4_address: 172.88.88.58
 
   #  kibana:
   #    #    container_name: kibana
@@ -155,7 +158,6 @@ services:
     networks:
       app_net:
         ipv4_address: 172.88.88.88
-
 
 volumes:
   pgdata:

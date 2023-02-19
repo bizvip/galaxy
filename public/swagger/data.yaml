@@ -1,0 +1,201 @@
+openapi: 3.0.0
+info:
+  title: 'Galaxy Project OpenApi Documents'
+  version: '0.1'
+servers:
+  -
+    url: '{schema}://{ip}:{port}'
+    description: 'swagger server url'
+    variables:
+      schema:
+        enum:
+          - http
+          - https
+        default: http
+      ip:
+        enum:
+          - 127.0.0.1
+          - hosts.run
+        default: 127.0.0.1
+      port:
+        enum:
+          - '8888'
+          - '8000'
+        default: '8888'
+paths:
+  /api/v1/front/agent/levels:
+    get:
+      tags:
+        - Agent
+      summary: 讀取代理層級
+      operationId: user-profile
+      responses:
+        '200':
+          description: successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/200'
+        '400':
+          description: 'Business Exception'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/400'
+        '429':
+          description: 'Rate Limit'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/429'
+        '500':
+          description: 'Server Internal Error'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/500'
+        '503':
+          description: 'Service Unavailable'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/503'
+  /api/v1/front/app-centre/apps:
+    get:
+      tags:
+        - AppCentre
+      summary: 應用中心
+      operationId: app-centre-list
+      parameters:
+        -
+          name: num
+          in: query
+          description: ' 頁碼 '
+          required: false
+          schema:
+            type: integer
+            default: 1
+        -
+          name: size
+          in: query
+          description: ' 單頁條目數 '
+          required: false
+          schema:
+            type: integer
+            default: 10
+      responses:
+        '200':
+          description: successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/200'
+        '400':
+          description: 'Business Exception'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/400'
+        '500':
+          description: 'Server Internal Error'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/500'
+        '503':
+          description: 'Service Unavailable'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/503'
+      security:
+        -
+          bearerAuth: []
+components:
+  schemas:
+    '200':
+      required:
+        - code
+        - msg
+        - data
+      properties:
+        code:
+          type: integer
+          default: '200'
+        msg:
+          type: string
+          default: successfully
+        data:
+          type: object
+          default: 'null'
+      type: object
+    '400':
+      required:
+        - code
+        - msg
+        - data
+      properties:
+        code:
+          type: integer
+          default: '0000 四位業務代碼 具體參考業務定義'
+        msg:
+          type: string
+          default: 'something problems'
+        data:
+          type: object
+          default: '{}'
+      type: object
+    '429':
+      required:
+        - code
+        - msg
+        - data
+      properties:
+        code:
+          type: integer
+          default: 429
+        msg:
+          type: string
+          default: 請求頻率過高，遭遇服務器限流
+        data:
+          type: object
+          default: 'null'
+      type: object
+    '500':
+      required:
+        - code
+        - msg
+        - data
+      properties:
+        code:
+          type: integer
+          default: '500'
+        msg:
+          type: string
+          default: 'Internal Server Error'
+        data:
+          type: object
+          default: 'null'
+      type: object
+    '503':
+      required:
+        - code
+        - msg
+        - data
+      properties:
+        code:
+          type: integer
+          default: '503'
+        msg:
+          type: string
+          default: 'Server Busy'
+        data:
+          type: object
+          default: 'null'
+      type: object
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+security:
+  bearerAuth: []

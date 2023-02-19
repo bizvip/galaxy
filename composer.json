@@ -14,6 +14,7 @@
     "require": {
         "php": ">=8.0",
         "96qbhy/hyperf-auth": "^3.0",
+        "hashids/hashids": "^5.0",
         "hyperf/amqp": "~3.0.0",
         "hyperf/cache": "~3.0.0",
         "hyperf/command": "~3.0.0",
@@ -22,7 +23,6 @@
         "hyperf/config-nacos": "^3.0",
         "hyperf/constants": "~3.0.0",
         "hyperf/database": "~3.0.0",
-        "hyperf/database-pgsql": "^3.0",
         "hyperf/db-connection": "~3.0.0",
         "hyperf/elasticsearch": "~3.0.0",
         "hyperf/framework": "~3.0.0",
@@ -32,7 +32,10 @@
         "hyperf/memory": "~3.0.0",
         "hyperf/nacos": "^3.0",
         "hyperf/process": "~3.0.0",
-        "hyperf/redis": "~3.0.0"
+        "hyperf/redis": "~3.0.0",
+        "hyperf/snowflake": "^3.0",
+        "hyperf/validation": "^3.0",
+        "zircote/swagger-php": "^4.6"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.0",
@@ -79,7 +82,7 @@
         "analyse": "phpstan analyse --memory-limit 300M -l 0 -c phpstan.neon ./app ./config",
         "start": [
             "Composer\\Config::disableProcessTimeout",
-            "php ./bin/hyperf.php start"
+            "php ./bin/run start"
         ]
     }
 }
