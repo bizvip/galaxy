@@ -7,7 +7,7 @@ return [
     'host'     => env('CONFIG_CENTER_HOST'),
     'port'     => env('CONFIG_CENTER_PORT'),
     'username' => 'nacos',
-    'password' => '19EuBip2zGZXA004AkqP',
+    'password' => 'nacos',
     'guzzle'   => [
         'config' => [
             'headers' => [

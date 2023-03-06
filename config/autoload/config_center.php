@@ -27,7 +27,7 @@ return [
             'merge_mode'      => Hyperf\ConfigNacos\Constants::CONFIG_MERGE_OVERWRITE,
             'interval'        => 5,
             // 如果对应的映射 key 没有设置，则使用默认的 key
-            'default_key'     => 'galaxy-api-conf',
+            'default_key'     => 'galaxy-conf',
             'listener_config' => [
                 // dataId, group, tenant, type, content
                 // 映射后的配置 KEY => Nacos 中实际的配置

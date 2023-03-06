@@ -33,13 +33,8 @@ final class Str extends \Hyperf\Utils\Str
     //     return \ctype_xdigit($hex) ? hexdec($hex) : 0;
     // }
 
-    public static function idToHash(
-        int|string|array $id,
-        string $salt = '',
-        int $length = 0,
-        string $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890',
-        bool $isHex = false
-    ): string {
+    public static function idToHash(int|string|array $id, string $salt = '', int $length = 0, string $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890', bool $isHex = false): string
+    {
         $hi = new \Hashids\Hashids($salt, $length, $alphabet);
         return $isHex ? $hi->encodeHex($id) : $hi->encode($id);
     }
@@ -49,7 +44,7 @@ final class Str extends \Hyperf\Utils\Str
         string $salt = '',
         int $length = 0,
         string $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890',
-        bool $isHex = false
+        bool $isHex = false,
     ): string|array {
         $hi = new \Hashids\Hashids($salt, $length, $alphabet);
         return $isHex ? $hi->decodeHex($hash) : $hi->decode($hash);

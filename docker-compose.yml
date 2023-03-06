@@ -56,6 +56,14 @@ services:
       app_net:
         ipv4_address: 172.88.88.18
 
+#  pgbouncer:
+#    image: bitnami/pgbouncer:latest
+#    volumes:
+#      - /path/to/init-scripts:/docker-entrypoint-initdb.d
+#    networks:
+#      app_net:
+#        ipv4_address: 172.88.88.20
+
   pgadmin:
     image: dpage/pgadmin4:latest
     restart: always
@@ -63,7 +71,7 @@ services:
       PGADMIN_DEFAULT_EMAIL: 'a@a.com'
       PGADMIN_DEFAULT_PASSWORD: '19EuBip2zGZXA004AkqP'
     ports:
-      - "8543:80"
+      - "25432:80"
     networks:
       app_net:
         ipv4_address: 172.88.88.19
@@ -74,6 +82,7 @@ services:
   mysql:
     image: mysql/mysql-server:latest
     volumes:
+      - ./docker/my.cnf:/etc/my.cnf
       - ./docker/mysql-data:/var/lib/mysql
     restart: always
     environment:
@@ -150,7 +159,7 @@ services:
 
   nacos:
     image: nacos/nacos-server:latest
-    container_name: nacos
+#    container_name: nacos
     ports:
       - "18848:8848"
     environment:

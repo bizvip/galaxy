@@ -1,34 +1,55 @@
 openapi: 3.0.0
 info:
   title: 'Galaxy Project OpenApi Documents'
-  version: '0.1'
+  version: 1.0.0
 servers:
   -
-    url: '{schema}://{ip}:{port}'
-    description: 'swagger server url'
+    url: '{schema}://{url}:{port}'
+    description: 'OpenApi Location'
     variables:
       schema:
         enum:
-          - http
           - https
+          - http
         default: http
-      ip:
+      url:
         enum:
           - 127.0.0.1
-          - hosts.run
         default: 127.0.0.1
       port:
         enum:
-          - '8888'
-          - '8000'
+          - 8888
+          - 8000
         default: '8888'
 paths:
-  /api/v1/front/agent/levels:
-    get:
+  /api/v1/auth/token:
+    post:
       tags:
-        - Agent
-      summary: 讀取代理層級
-      operationId: user-profile
+        - Auth
+        - Token
+      summary: 'add new token'
+      operationId: auth-token-add
+      requestBody:
+        description: 后台账号登陆
+        content:
+          application/json:
+            schema:
+              required:
+                - usr
+                - pwd
+                - otp_code
+              properties:
+                usr:
+                  type: string
+                  example: root
+                pwd:
+                  description: 客户端需要发送md5
+                  type: string
+                  example: 200820E3227815ED1756A6B531E7E0D2
+                otp_code:
+                  type: string
+                  example: '348591'
+              type: object
       responses:
         '200':
           description: successfully
@@ -36,12 +57,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/200'
-        '400':
-          description: 'Business Exception'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/400'
         '429':
           description: 'Rate Limit'
           content:
@@ -54,60 +69,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/500'
-        '503':
-          description: 'Service Unavailable'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/503'
-  /api/v1/front/app-centre/apps:
-    get:
-      tags:
-        - AppCentre
-      summary: 應用中心
-      operationId: app-centre-list
-      parameters:
-        -
-          name: num
-          in: query
-          description: ' 頁碼 '
-          required: false
-          schema:
-            type: integer
-            default: 1
-        -
-          name: size
-          in: query
-          description: ' 單頁條目數 '
-          required: false
-          schema:
-            type: integer
-            default: 10
-      responses:
-        '200':
-          description: successfully
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/200'
-        '400':
-          description: 'Business Exception'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/400'
-        '500':
-          description: 'Server Internal Error'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/500'
-        '503':
-          description: 'Service Unavailable'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/503'
       security:
         -
           bearerAuth: []
@@ -120,8 +81,9 @@ components:
         - data
       properties:
         code:
+          description: 正常返回0，当返回4位数字代表具体业务错误码定义
           type: integer
-          default: '200'
+          default: 0
         msg:
           type: string
           default: successfully
@@ -136,14 +98,15 @@ components:
         - data
       properties:
         code:
+          description: 未知请求错误
           type: integer
-          default: '0000 四位業務代碼 具體參考業務定義'
+          default: 1000
         msg:
           type: string
           default: 'something problems'
         data:
           type: object
-          default: '{}'
+          default: 'null'
       type: object
     '429':
       required:
@@ -156,7 +119,7 @@ components:
           default: 429
         msg:
           type: string
-          default: 請求頻率過高，遭遇服務器限流
+          default: 'Request Limited'
         data:
           type: object
           default: 'null'
@@ -169,7 +132,7 @@ components:
       properties:
         code:
           type: integer
-          default: '500'
+          default: 500
         msg:
           type: string
           default: 'Internal Server Error'
@@ -185,7 +148,7 @@ components:
       properties:
         code:
           type: integer
-          default: '503'
+          default: 503
         msg:
           type: string
           default: 'Server Busy'
@@ -198,4 +161,5 @@ components:
       type: http
       scheme: bearer
 security:
-  bearerAuth: []
+  -
+    bearerAuth: []

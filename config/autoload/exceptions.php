@@ -5,9 +5,9 @@ declare(strict_types=1);
 return [
     'handler' => [
         'http' => [
-            \Qbhy\HyperfAuth\AuthExceptionHandler::class,
+            \App\Exception\Handler\AuthExceptionHandler::class,
             Hyperf\HttpServer\Exception\Handler\HttpExceptionHandler::class,
-            App\Exception\Handler\AppExceptionHandler::class,
+            App\Exception\Handler\OthersExceptionHandler::class,
         ],
     ],
 ];

@@ -14,12 +14,12 @@ return [
         'collation' => env('DB_COLLATION', 'utf8mb4_unicode_ci'),
         'prefix'    => env('DB_PREFIX', ''),
         'pool'      => [
-            'min_connections' => 10,
-            'max_connections' => 100,
-            'connect_timeout' => 5.0,
-            'wait_timeout'    => 30.0,
-            'heartbeat'       => -1,
-            'max_idle_time'   => 300.0,
+            'min_connections' => 1,
+            'max_connections' => 200,
+            'connect_timeout' => 20.0,
+            'wait_timeout'    => 6.0,
+            'heartbeat'       => 60,
+            'max_idle_time'   => 60.0,
         ],
         'options'   => [
             \PDO::ATTR_CASE              => \PDO::CASE_NATURAL,
